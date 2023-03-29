@@ -12,7 +12,7 @@ def screenXO(screen):
     corners = {
                "upperLeft":     "┌",    #218 np. chr(218)
                "upperRight":    "┐",    #191
-               "mediumLeft":    "├",    #195
+               "mediumLeft":    "├",    #195 
                "mediumRight":   "┤",    #180
                "bottomLeft":    "└",    #192
                "bottomRight":   "┘",    #217
@@ -27,13 +27,14 @@ def screenXO(screen):
     
     size = len(screen)                  #rozmiar ekranu
     verticalLine = [lines["horizontal"]*3]*size         #lista zawierająca poziome linie
-    #printWhite(verticalLine)
+    #print(verticalLine)
     
     verticalUp = corners["upperMid"].join(verticalLine)
     verticalMid = corners["midiumMid"].join(verticalLine)
     verticalDown = corners["bottomMid"].join(verticalLine)
 
     printWhite(corners["upperLeft"]+verticalUp+corners["upperRight"]+"\n")
+ 
     for i,row in enumerate(screen):
         printWhite(lines["vertical"])
         for j in row:
@@ -50,12 +51,19 @@ def screenXO(screen):
 import random
 
 
-rozmiar = 5
+rozmiar = 12
 dane = []
 for i in range(rozmiar):
-    wiersz = [random.randint(-1,1) for i in range(rozmiar)]
+    wiersz = [0 for i in range(rozmiar)]
     dane.append(wiersz)
 
-screenXO(dane)
+gracz = 1
+while True:
+    screenXO(dane)
 
+    x = int(input("Podaj 1 wsp: "))-1
+    y = int(input("Podaj 2 wsp: "))-1
 
+    dane[y][x] = gracz
+    gracz *= -1
+    
