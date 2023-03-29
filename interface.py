@@ -48,8 +48,6 @@ def screenXO(screen):
 
 
 
-
-
 rozmiar = 9
 dane = []
 for i in range(rozmiar):
