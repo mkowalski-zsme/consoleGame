@@ -50,7 +50,7 @@ def screenXO(screen):
 import random
 
 
-rozmiar = 9
+rozmiar = 5
 dane = []
 for i in range(rozmiar):
     wiersz = [random.randint(-1,1) for i in range(rozmiar)]
