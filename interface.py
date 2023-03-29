@@ -47,11 +47,13 @@ def screenXO(screen):
     print(corners["bottomLeft"]+verticalDown+corners["bottomRight"])
 
 
+import random
+
 
 rozmiar = 9
 dane = []
 for i in range(rozmiar):
-    wiersz = [0 for i in range(rozmiar)]
+    wiersz = [random.randint(-1,1) for i in range(rozmiar)]
     dane.append(wiersz)
 
 screenXO(dane)
