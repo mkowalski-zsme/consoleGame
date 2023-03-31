@@ -9,6 +9,8 @@ def printRed(data):
 
 def screenXO(screen):
     os.system('cls')
+
+    
     corners = {
                "upperLeft":     "┌",    #218 np. chr(218)
                "upperRight":    "┐",    #191
@@ -26,12 +28,14 @@ def screenXO(screen):
               }
     
     size = len(screen)                  #rozmiar ekranu
+
     verticalLine = [lines["horizontal"]*3]*size         #lista zawierająca poziome linie
     #print(verticalLine)
     
     verticalUp = corners["upperMid"].join(verticalLine)
     verticalMid = corners["midiumMid"].join(verticalLine)
     verticalDown = corners["bottomMid"].join(verticalLine)
+   
 
     printWhite(corners["upperLeft"]+verticalUp+corners["upperRight"]+"\n")
  
@@ -43,27 +47,26 @@ def screenXO(screen):
             else: printWhite("   ")
             printWhite(lines["vertical"])            
         print()
-        if(i < size-1): print(corners["mediumLeft"]+verticalMid+corners["mediumRight"])
-    
-    print(corners["bottomLeft"]+verticalDown+corners["bottomRight"])
+        if(i < size-1): printWhite(corners["mediumLeft"]+verticalMid+corners["mediumRight"]+"\n")
+
+    printWhite(corners["bottomLeft"]+verticalDown+corners["bottomRight"]+"\n")
 
 
 import random
 
 
-rozmiar = 12
+rozmiar = 10
 dane = []
 for i in range(rozmiar):
-    wiersz = [0 for i in range(rozmiar)]
-    dane.append(wiersz)
+    kolumna = [0 for i in range(rozmiar)]
+    dane.append(kolumna)
 
 gracz = 1
 while True:
     screenXO(dane)
-
-    x = int(input("Podaj 1 wsp: "))-1
-    y = int(input("Podaj 2 wsp: "))-1
-
+    if gracz == 1: print("Gracz 1")
+    else: print("Gracz 2")
+    x = int(input("Podaj wsp x: "))
+    y = int(input("Podaj wsp y: "))
     dane[y][x] = gracz
     gracz *= -1
-    
