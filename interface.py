@@ -7,6 +7,9 @@ def printWhite(data):
 def printRed(data):
     print(Fore.RED,data,end="",sep="")
 
+def printGreen(data):
+    print(Fore.GREEN,data,end="",sep="")
+
 def screenXO(screen):
     os.system('cls')
 
@@ -42,7 +45,7 @@ def screenXO(screen):
     for i,row in enumerate(screen):
         printWhite(lines["vertical"])
         for j in row:
-            if(j>0): printWhite(" X ")
+            if(j>0): printGreen(" X ")
             elif j<0: printRed(" O ")
             else: printWhite("   ")
             printWhite(lines["vertical"])            
@@ -64,8 +67,8 @@ for i in range(rozmiar):
 gracz = 1
 while True:
     screenXO(dane)
-    if gracz == 1: print("Gracz 1")
-    else: print("Gracz 2")
+    if gracz == 1: printGreen("Gracz 1\n")
+    else: printRed("Gracz 2\n")
     x = int(input("Podaj wsp x: "))
     y = int(input("Podaj wsp y: "))
     dane[y][x] = gracz
