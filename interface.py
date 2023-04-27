@@ -64,12 +64,15 @@ for i in range(rozmiar):
     kolumna = [0 for i in range(rozmiar)]
     dane.append(kolumna)
 
-gracz = 1
-while True:
-    screenXO(dane)
-    if gracz == 1: printGreen("Gracz 1\n")
-    else: printRed("Gracz 2\n")
-    x = int(input("Podaj wsp x: "))
-    y = int(input("Podaj wsp y: "))
-    dane[y][x] = gracz
-    gracz *= -1
+screenXO(dane)
+
+
+# gracz = 1
+# while True:
+#     screenXO(dane)
+#     if gracz == 1: printGreen("Gracz 1\n")
+#     else: printRed("Gracz 2\n")
+#     x = int(input("Podaj wsp x: "))
+#     y = int(input("Podaj wsp y: "))
+#     dane[y][x] = gracz
+#     gracz *= -1
