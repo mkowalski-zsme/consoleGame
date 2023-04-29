@@ -33,11 +33,15 @@ def screenXO(screen):
     size = len(screen)                  #rozmiar ekranu
 
     verticalLine = [lines["horizontal"]*3]*size         #lista zawierająca poziome linie
-    #print(verticalLine)
+    print(verticalLine)
     
     verticalUp = corners["upperMid"].join(verticalLine)
     verticalMid = corners["midiumMid"].join(verticalLine)
     verticalDown = corners["bottomMid"].join(verticalLine)
+    print(verticalUp)
+    print(verticalMid)
+    print(verticalDown)
+    
    
 
     printWhite(corners["upperLeft"]+verticalUp+corners["upperRight"]+"\n")
@@ -67,15 +71,15 @@ for i in range(rozmiar):
 screenXO(dane)
 
 
-# gracz = 1
-# while True:
-#     screenXO(dane)
-#     if gracz == 1: printGreen("Gracz 1\n")
-#     else: printRed("Gracz 2\n")
-#     x = int(input("Podaj wsp x: "))
-#     y = int(input("Podaj wsp y: "))
-#     dane[y][x] = gracz
-#     gracz *= -1
+gracz = 1
+while True:
+    screenXO(dane)
+    if gracz == 1: printGreen("Gracz 1\n")
+    else: printRed("Gracz 2\n")
+    x = int(input("Podaj wsp x: "))
+    y = int(input("Podaj wsp y: "))
+    dane[y][x] = gracz
+    gracz *= -1
 
 
 print(Back.LIGHTYELLOW_EX,Fore.GREEN,"test")
