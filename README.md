@@ -94,9 +94,9 @@ np. `['───', '───', '───', '───', '───', '──�
 co w efekcie da:
 `┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┐`
 - Następnie w pętli odbywa się rysowanie kolejnych wierszy planszy zaczynając od poziomej linii (lewej krawędzi): `printWhite(lines["vertical"])`, następnie dla każdej kolumny w wierszu: `for j in row:` następuje rysowanie pola:
--- jeżeli wartość listy jest dodatnia, to narysuj krzyżyk ( X )
--- jeżeli wartość listy jest ujemna, to narysuj kółko ( O )
--- a jeżeli wartość rórna jest 0, to narusyj spację. 
+  - jeżeli wartość listy jest dodatnia, to narysuj krzyżyk ( X )
+  - jeżeli wartość listy jest ujemna, to narysuj kółko ( O )
+  - a jeżeli wartość rórna jest 0, to narusyj spację. 
 Po każdym polu (z prawej strony) rysowana jest pionowa linia: `│`
 - Rysowanie wierszy powtarza się dla wszystkich wierszy listy. 
 Dla ostatniego wiersza ```if(i < size-1): printWhite(corners["mediumLeft"]+verticalMid+corners["mediumRight"]+"\n") ``` nie jest już rysowana środkowa linia, ponieważ poniżej nie znajduje się już nic.
