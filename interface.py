@@ -76,3 +76,7 @@ screenXO(dane)
 #     y = int(input("Podaj wsp y: "))
 #     dane[y][x] = gracz
 #     gracz *= -1
+
+
+print(Back.LIGHTYELLOW_EX,Fore.GREEN,"test")
+print(Back.YELLOW,Fore.BLUE,"test")
