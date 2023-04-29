@@ -96,7 +96,8 @@ co w efekcie da:
 - Następnie w pętli odbywa się rysowanie kolejnych wierszy planszy zaczynając od poziomej linii (lewej krawędzi): `printWhite(lines["vertical"])`, następnie dla każdej kolumny w wierszu: `for j in row:` następuje rysowanie pola:
   - jeżeli wartość listy jest dodatnia, to narysuj krzyżyk ( X )
   - jeżeli wartość listy jest ujemna, to narysuj kółko ( O )
-  - a jeżeli wartość rórna jest 0, to narusyj spację. 
+  - a jeżeli wartość rórna jest 0, to narusyj spację (pusty obszar).
+Dla różnych gier mogą to być zupełnie inne wartości... 
 Po każdym polu (z prawej strony) rysowana jest pionowa linia: `│`
 - Rysowanie wierszy powtarza się dla wszystkich wierszy listy. 
 Dla ostatniego wiersza ```if(i < size-1): printWhite(corners["mediumLeft"]+verticalMid+corners["mediumRight"]+"\n") ``` nie jest już rysowana środkowa linia, ponieważ poniżej nie znajduje się już nic.
@@ -104,7 +105,34 @@ Dla ostatniego wiersza ```if(i < size-1): printWhite(corners["mediumLeft"]+verti
 ```printWhite(corners["bottomLeft"]+verticalDown+corners["bottomRight"]+"\n")```
 która wygląda następująco: `└───┴───┴───┴───┴───┴───┴───┴───┴───┴───┘`
 
+# Funkcja główna
 
+1. Rozpoczęcie skryptu od sprawdzenie czy to ten plik jest uruchamiany:
+```if __name__ == "__main__":```
+2. Utworzenie listy dwuwymiarowej wypełnionej zerami (pusta plansza):
+```
+    rozmiar = 10 #rozmiar planszy: 10 x 10
+    dane = [] #definicja pustej listy
+    for i in range(rozmiar): #dla każdego wiersza
+        kolumna = [0 for i in range(rozmiar)] #wygeneruj 10 kolumn wypełnionych zerami
+        dane.append(kolumna) #wrzuć gotowy wiersz do listy
+```
+Po uruchomieniu tego fragmentu utworzy się lista zawierająca w sobie 10 list, każda zawierająca 10 zer. To będzie reprezentacja stanu gry:
+```
+   [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
+```
+3. Następnie rozpoczyna się rozgrywka (nieskończona pętla), w któej rysowana jest plansza, a gracze naprzemiennie wprowadzają współrzędne swoich ruchów.
+
+Gra nie kontroluje poprawności ruchów, tak więc możliwe jest wprowadzanie współrzędnych poza planszą, lub współrzędnych zajętego miejsca.
 
 
 

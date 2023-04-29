@@ -33,15 +33,15 @@ def screenXO(screen):
     size = len(screen)                  #rozmiar ekranu
 
     verticalLine = [lines["horizontal"]*3]*size         #lista zawierająca poziome linie
-    print(verticalLine)
+    # print(verticalLine)
     
     verticalUp = corners["upperMid"].join(verticalLine)
     verticalMid = corners["midiumMid"].join(verticalLine)
     verticalDown = corners["bottomMid"].join(verticalLine)
-    print(verticalUp)
-    print(verticalMid)
-    print(verticalDown)
-    
+    # print(verticalUp)
+    # print(verticalMid)
+    # print(verticalDown)
+
    
 
     printWhite(corners["upperLeft"]+verticalUp+corners["upperRight"]+"\n")
@@ -59,28 +59,24 @@ def screenXO(screen):
     printWhite(corners["bottomLeft"]+verticalDown+corners["bottomRight"]+"\n")
 
 
-import random
 
+if __name__ == "__main__":
 
-rozmiar = 10
-dane = []
-for i in range(rozmiar):
-    kolumna = [0 for i in range(rozmiar)]
-    dane.append(kolumna)
+    rozmiar = 10
+    dane = []
+    for i in range(rozmiar):
+        kolumna = [0 for i in range(rozmiar)]
+        dane.append(kolumna)
+    
+    # print(dane)
+   
 
-screenXO(dane)
-
-
-gracz = 1
-while True:
-    screenXO(dane)
-    if gracz == 1: printGreen("Gracz 1\n")
-    else: printRed("Gracz 2\n")
-    x = int(input("Podaj wsp x: "))
-    y = int(input("Podaj wsp y: "))
-    dane[y][x] = gracz
-    gracz *= -1
-
-
-print(Back.LIGHTYELLOW_EX,Fore.GREEN,"test")
-print(Back.YELLOW,Fore.BLUE,"test")
+    gracz = 1
+    while True:
+        screenXO(dane)
+        if gracz == 1: printGreen("Gracz 1\n")
+        else: printRed("Gracz 2\n")
+        x = int(input("Podaj wsp x: "))
+        y = int(input("Podaj wsp y: "))
+        dane[y][x] = gracz
+        gracz *= -1
