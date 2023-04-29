@@ -29,9 +29,9 @@ Funkcja rysująca planszę gry składa się z następujących znaków ASCII (tab
 - środkowy lewy narożnik np. znak `├`, kod ASCII: 195
 - itd...
 
-Opis działania kodu:
+##Opis działania kodu:
 
-## Import bibliotek
+### Import bibliotek
 ```
 import os
 from colorama import Fore, Back
@@ -75,7 +75,7 @@ def printGreen(data):
 
 Powyższe funkcje służą do wygodnego pisania w kolorze (na biało, czerwono i zielono), bez znaku końca linii
 
-## Funkcja rysująca planszę:
+### Funkcja rysująca planszę:
 
 1. Czyszczenie ekranu: `os.system('cls')`
 2. Definicja elementów z których składają się ramki planszy w postaci słownika np.:
@@ -105,7 +105,7 @@ Dla ostatniego wiersza ```if(i < size-1): printWhite(corners["mediumLeft"]+verti
 ```printWhite(corners["bottomLeft"]+verticalDown+corners["bottomRight"]+"\n")```
 która wygląda następująco: `└───┴───┴───┴───┴───┴───┴───┴───┴───┴───┘`
 
-# Funkcja główna
+### Funkcja główna
 
 1. Rozpoczęcie skryptu od sprawdzenie czy to ten plik jest uruchamiany:
 ```if __name__ == "__main__":```
