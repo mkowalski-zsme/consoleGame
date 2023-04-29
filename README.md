@@ -29,7 +29,7 @@ Funkcja rysująca planszę gry składa się z następujących znaków ASCII (tab
 - środkowy lewy narożnik np. znak `├`, kod ASCII: 195
 - itd...
 
-##Opis działania kodu:
+## Opis działania kodu:
 
 ### Import bibliotek
 ```
@@ -59,7 +59,7 @@ np.
 print(Back.LIGHTYELLOW_EX,Fore.GREEN,"test")
 print(Back.YELLOW,Fore.BLUE,"test")
 ```
-## Definicje funkcji
+### Definicje funkcji
 
 ```
 def printWhite(data):
