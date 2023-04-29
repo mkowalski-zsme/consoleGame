@@ -36,7 +36,7 @@ Opis działania kodu:
 import os
 from colorama import Fore, Back
 ```
-Biblioteka `os` zawiera funkcje umożliwiające wywałanie poleceń systemu operacyjnego. W tym przykładzie użyta jest funkcja `system` wywołująca polecenie konsoli `cls` - czyszczenie ekranu. Uwaga: funkcja cls jest stosunkowo wolna!
+Biblioteka `os` zawiera funkcje umożliwiające wywołanie poleceń systemu operacyjnego. W tym przykładzie użyta jest funkcja `system` wywołująca polecenie konsoli `cls` - czyszczenie ekranu. Uwaga: funkcja cls jest stosunkowo wolna!
 
 Biblioteka `colorama` umożliwia "pisanie" w dostępnych kolorach. Zaimportowane zmienne `Fore` - kolor tekstu i `Back` - kolor tła.
 Dostępne kolory:
@@ -80,7 +80,7 @@ Powyższe funkcje służą do wygodnego pisania w kolorze (na biało, czerwono i
 1. Czyszczenie ekranu: `os.system('cls')`
 2. Definicja elementów z których składają się ramki planszy w postaci słownika np.:
 lewy górny znak -> symbol kodu ASCII o numerze 218: `┌` itd...
-3. Definicja elemntów służących do rysowania linii - pionowej: `│` i poziomej: `─`
+3. Definicja elementów służących do rysowania linii - pionowej: `│` i poziomej: `─`
 4. Pobranie rozmiaru ekranu (ilość wierszy w liście): `size = len(screen)`
 5. Definicja listy składającej się z trzech znaków poziomych linii o rozmiarze `size`
 np. `['───', '───', '───', '───', '───', '───', '───', '───', '───', '───']`
@@ -96,12 +96,12 @@ co w efekcie da:
 - Następnie w pętli odbywa się rysowanie kolejnych wierszy planszy zaczynając od poziomej linii (lewej krawędzi): `printWhite(lines["vertical"])`, następnie dla każdej kolumny w wierszu: `for j in row:` następuje rysowanie pola:
   - jeżeli wartość listy jest dodatnia, to narysuj krzyżyk ( X )
   - jeżeli wartość listy jest ujemna, to narysuj kółko ( O )
-  - a jeżeli wartość rórna jest 0, to narusyj spację (pusty obszar).
+  - a jeżeli wartość równa jest 0, to narysuj spację (pusty obszar).
 Dla różnych gier mogą to być zupełnie inne wartości... 
 Po każdym polu (z prawej strony) rysowana jest pionowa linia: `│`
 - Rysowanie wierszy powtarza się dla wszystkich wierszy listy. 
 Dla ostatniego wiersza ```if(i < size-1): printWhite(corners["mediumLeft"]+verticalMid+corners["mediumRight"]+"\n") ``` nie jest już rysowana środkowa linia, ponieważ poniżej nie znajduje się już nic.
-- Na samym końcy rysowana jest linia dolna: 
+- Na samym końcu rysowana jest linia dolna: 
 ```printWhite(corners["bottomLeft"]+verticalDown+corners["bottomRight"]+"\n")```
 która wygląda następująco: `└───┴───┴───┴───┴───┴───┴───┴───┴───┴───┘`
 
@@ -130,7 +130,7 @@ Po uruchomieniu tego fragmentu utworzy się lista zawierająca w sobie 10 list, 
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
 ```
-3. Następnie rozpoczyna się rozgrywka (nieskończona pętla), w któej rysowana jest plansza, a gracze naprzemiennie wprowadzają współrzędne swoich ruchów.
+3. Następnie rozpoczyna się rozgrywka (nieskończona pętla), w której rysowana jest plansza, a gracze naprzemiennie wprowadzają współrzędne swoich ruchów.
 
 Gra nie kontroluje poprawności ruchów, tak więc możliwe jest wprowadzanie współrzędnych poza planszą, lub współrzędnych zajętego miejsca.
 
