@@ -48,6 +48,7 @@ Dostępne kolory:
 - BLACK
 - GREEN
 - MAGENTA
+
 oraz kolory o wzmocnionej jasności:
 - LIGHTYELLO_EX
 - LIGHTWHITE_EX
